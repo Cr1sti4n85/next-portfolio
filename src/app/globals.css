@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
-* {
-  font-family: Outfit;
+@theme {
+  --color-lightHover: #fcf4ff;
+  --color-darkHover: #2a004a;
+  --color-darkTheme: #11001f;
+  --font-family-outfit: "outfit", sans-serif;
+  --font-family-ovo: "ovo", serif;
+  --font-poppins: Poppins, sans-serif;
 }
