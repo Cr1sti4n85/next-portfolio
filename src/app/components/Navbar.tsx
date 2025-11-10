@@ -1,14 +1,22 @@
+"use client";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
-import arrowIcon from "@/assets/arrow-icon.png";
-import headerBgColor from "@/assets/header-bg-color.png";
+import { imgs } from "@/assets/assets";
+import { useRef } from "react";
 
 const Navbar = () => {
+  const sideMenuRef = useRef<HTMLUListElement>({} as HTMLUListElement);
+  const openMenu = () => {
+    sideMenuRef.current.style.transform = "translateX(-16rem)";
+  };
+
+  const closeMenu = () => {
+    sideMenuRef.current.style.transform = "translateX(16rem)";
+  };
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image
-          src={headerBgColor}
+          src={imgs.headerBgColor}
           alt="header background color"
           className="w-full"
         />
@@ -16,7 +24,7 @@ const Navbar = () => {
       <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
         <a href="#top">
           <Image
-            src={logo}
+            src={imgs.logo}
             alt={"logo"}
             className="w-28 cursor-pointer mr-14"
             loading="eager"
@@ -39,15 +47,59 @@ const Navbar = () => {
             <a href="#contact">Contacto</a>
           </li>
         </ul>
-        <div>
+        <div className="flex items-center gap-4">
+          <button>
+            <Image src={imgs.moonIcon} alt="moon icon" className="w-6" />
+          </button>
           <a
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-family-ovo"
           >
             Contáctame
-            <Image src={arrowIcon} alt="arrow icon" className="w-3" />
+            <Image src={imgs.arrowIcon} alt="arrow icon" className="w-3" />
           </a>
+          <button className="block md:hidden ml-3" onClick={openMenu}>
+            <Image src={imgs.blackMenu} alt="black menu" className="w-6" />
+          </button>
         </div>
+        {/*Mobile menu */}
+        <ul
+          ref={sideMenuRef}
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500"
+        >
+          <div className="absolute right-6 top-6" onClick={closeMenu}>
+            <Image
+              src={imgs.blackX}
+              alt="close menu"
+              className="w-5 cursor-pointer"
+            />
+          </div>
+          <li>
+            <a onClick={closeMenu} href="#top">
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a onClick={closeMenu} href="#about">
+              Acerca de
+            </a>
+          </li>
+          <li>
+            <a onClick={closeMenu} href="#services">
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a onClick={closeMenu} href="#work">
+              Trabajos
+            </a>
+          </li>
+          <li>
+            <a onClick={closeMenu} href="#contact">
+              Contacto
+            </a>
+          </li>
+        </ul>
       </nav>
     </>
   );
