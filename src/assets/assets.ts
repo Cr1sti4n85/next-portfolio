@@ -8,6 +8,12 @@ import profileImg from "./profile_pic.jpg";
 import handIcon from "./hand-icon.png";
 import rightArrowWhite from "./right-arrow-white.png";
 import downloadIcon from "./download-icon.png";
+import codeIcon from "./code-icon.png";
+import codeIconDark from "./code-icon-dark.png";
+import eduIcon from "./edu-icon.png";
+import eduIconDark from "./edu-icon-dark.png";
+import projectIcon from "./project-icon.png";
+import projectIconDark from "./project-icon-dark.png";
 
 export const imgs = {
   logo,
@@ -20,4 +26,31 @@ export const imgs = {
   handIcon,
   rightArrowWhite,
   downloadIcon,
+  codeIcon,
+  codeIconDark,
+  eduIcon,
+  eduIconDark,
+  projectIcon,
+  projectIconDark,
 };
+
+export const infoList = [
+  {
+    icon: imgs.codeIcon,
+    iconDark: imgs.codeIconDark,
+    title: "Languages",
+    description: "HTML, CSS, JavaScript React Js, Next Js",
+  },
+  {
+    icon: imgs.eduIcon,
+    iconDark: imgs.eduIconDark,
+    title: "Education",
+    description: "B.Tech in Computer Science",
+  },
+  {
+    icon: imgs.projectIcon,
+    iconDark: imgs.projectIconDark,
+    title: "Projects",
+    description: "Built more than 5 projects",
+  },
+];

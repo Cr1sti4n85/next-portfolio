@@ -7,4 +7,6 @@
   --font-family-outfit: "outfit", sans-serif;
   --font-family-ovo: "ovo", serif;
   --font-poppins: Poppins, sans-serif;
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
 }
