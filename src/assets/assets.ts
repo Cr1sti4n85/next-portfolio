@@ -14,6 +14,12 @@ import eduIcon from "./edu-icon.png";
 import eduIconDark from "./edu-icon-dark.png";
 import projectIcon from "./project-icon.png";
 import projectIconDark from "./project-icon-dark.png";
+import vscode from "./vscode.png";
+import mongodb from "./mongodb.png";
+import git from "./git.png";
+import supabase from "./supabase.png";
+import intellij from "./intellij.png";
+import mysql from "./MySQL.png";
 
 export const imgs = {
   logo,
@@ -32,25 +38,40 @@ export const imgs = {
   eduIconDark,
   projectIcon,
   projectIconDark,
+  vscode,
+  mongodb,
+  git,
+  supabase,
+  intellij,
+  mysql,
 };
 
 export const infoList = [
   {
     icon: imgs.codeIcon,
     iconDark: imgs.codeIconDark,
-    title: "Languages",
-    description: "HTML, CSS, JavaScript React Js, Next Js",
+    title: "Lenguajes",
+    description: "HTML, CSS, JavaScript, Typescript, Java",
   },
   {
     icon: imgs.eduIcon,
     iconDark: imgs.eduIconDark,
-    title: "Education",
-    description: "B.Tech in Computer Science",
+    title: "Educación",
+    description: "Redes y Telecomuncaciones",
   },
   {
     icon: imgs.projectIcon,
     iconDark: imgs.projectIconDark,
-    title: "Projects",
-    description: "Built more than 5 projects",
+    title: "Proyectos",
+    description: "He desarrollado varios proyectos full-stack",
   },
+];
+
+export const toolsData = [
+  imgs.vscode,
+  imgs.intellij,
+  imgs.supabase,
+  imgs.git,
+  imgs.mongodb,
+  imgs.mysql,
 ];
