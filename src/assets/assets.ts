@@ -20,6 +20,9 @@ import git from "./git.png";
 import supabase from "./supabase.png";
 import intellij from "./intellij.png";
 import mysql from "./MySQL.png";
+import webIcon from "./web-icon.png";
+import mobileIcon from "./mobile-icon.png";
+import rightArrow from "./right-arrow.png";
 
 export const imgs = {
   logo,
@@ -44,6 +47,9 @@ export const imgs = {
   supabase,
   intellij,
   mysql,
+  webIcon,
+  mobileIcon,
+  rightArrow,
 };
 
 export const infoList = [
@@ -64,6 +70,23 @@ export const infoList = [
     iconDark: imgs.projectIconDark,
     title: "Proyectos",
     description: "He desarrollado varios proyectos full-stack",
+  },
+];
+
+export const servicesData = [
+  {
+    icon: imgs.webIcon,
+    title: "Desarrollo Web",
+    description:
+      "Desarrollo de aplicaciones web creando interfaces atractivas y funcionales así como también un backend robusto.",
+    link: "",
+  },
+  {
+    icon: imgs.mobileIcon,
+    title: "Desarrollo de aplicaciones Android",
+    description:
+      "Desarrollo de aplicaciones móviles para dispositivos Android que cumpan con los estándares de Google",
+    link: "",
   },
 ];
 

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
+  console.log(isScroll);
   const sideMenuRef = useRef<HTMLUListElement>({} as HTMLUListElement);
   const openMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
@@ -35,7 +36,7 @@ const Navbar = () => {
       </div>
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-          isScroll ? "bg-white opacity-50 backdrop-blur-lg shadow-sm" : ""
+          isScroll ? "shadow-sm backdrop-blur-lg" : ""
         }`}
       >
         <a href="#top">
@@ -47,9 +48,7 @@ const Navbar = () => {
           />
         </a>
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll ? "" : "bg-white shadow-sm font-family-ovo opacity-50"
-          }`}
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full  font-family-ovo px-12 py-3 bg-white shadow-sm opacity-75`}
         >
           <li>
             <a href="#top">Inicio</a>
