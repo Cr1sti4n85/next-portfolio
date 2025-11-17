@@ -23,6 +23,8 @@ import mysql from "./MySQL.png";
 import webIcon from "./web-icon.png";
 import mobileIcon from "./mobile-icon.png";
 import rightArrow from "./right-arrow.png";
+import sendIcon from "./send-icon.png";
+import boldRightArrow from "./right-arrow-bold.png";
 
 export const imgs = {
   logo,
@@ -50,6 +52,8 @@ export const imgs = {
   webIcon,
   mobileIcon,
   rightArrow,
+  sendIcon,
+  boldRightArrow,
 };
 
 export const infoList = [
@@ -97,4 +101,27 @@ export const toolsData = [
   imgs.git,
   imgs.mongodb,
   imgs.mysql,
+];
+
+export const workData = [
+  {
+    title: "Blog Website",
+    description: " Proyecto de blog",
+    bgImage: "/work-1.png",
+  },
+  {
+    title: "Budget App",
+    description: "App de presupuesto ",
+    bgImage: "/work-1.png",
+  },
+  {
+    title: "Online Burger",
+    description: "App de Ecommerce",
+    bgImage: "/work-1.png",
+  },
+  {
+    title: "Inventario",
+    description: "App de inventario",
+    bgImage: "/work-1.png",
+  },
 ];

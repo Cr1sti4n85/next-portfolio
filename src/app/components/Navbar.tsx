@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
-  console.log(isScroll);
   const sideMenuRef = useRef<HTMLUListElement>({} as HTMLUListElement);
   const openMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
