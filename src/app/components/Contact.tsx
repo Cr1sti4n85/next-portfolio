@@ -1,7 +1,26 @@
-import { imgs } from "@/assets/assets";
+"use client";
+import { ACCESS_KEY, imgs } from "@/assets/assets";
 import Image from "next/image";
+import { useState } from "react";
 
 const Contact = () => {
+  const [result, setResult] = useState<string>("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    formData.append("access_key", ACCESS_KEY as string);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    console.log({ data });
+    setResult(data.success ? "Enviado con éxito" : "Error");
+  };
+
   return (
     <div
       id="contact"
@@ -15,25 +34,28 @@ const Contact = () => {
         Si tienes alguna duda, pregunta o comentario, no dudes en contactarme
         mediante el siguiente formulario.
       </p>
-      <form className="max-w-2xl mx-auto">
+      <form className="max-w-2xl mx-auto" onSubmit={onSubmit}>
         <div className="grid grid-auto-fit gap-6 mt-10 mb-8">
           <input
             className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             type="text"
             placeholder="Ingresa tu nombre"
             required
+            name="name"
           />
           <input
             className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             type="email"
             placeholder="Ingresa tu correo electrónico"
             required
+            name="email"
           />
         </div>
         <textarea
           rows={6}
           placeholder="Ingresa tu comentario"
           className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          name="message"
         ></textarea>
         <button
           type="submit"
@@ -42,7 +64,7 @@ const Contact = () => {
           Enviar{" "}
           <Image src={imgs.rightArrowWhite} alt="right arrow" className="w-4" />
         </button>
-        <p className="mt-4">Sending...</p>
+        <p className="mt-4">{result}</p>
       </form>
     </div>
   );

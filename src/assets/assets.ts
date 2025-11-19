@@ -125,3 +125,5 @@ export const workData = [
     bgImage: "/work-1.png",
   },
 ];
+
+export const ACCESS_KEY = process.env.NEXT_PUBLIC_ACCESS_KEY;
