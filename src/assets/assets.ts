@@ -25,6 +25,7 @@ import mobileIcon from "./mobile-icon.png";
 import rightArrow from "./right-arrow.png";
 import sendIcon from "./send-icon.png";
 import boldRightArrow from "./right-arrow-bold.png";
+import mailIcon from "./mail_icon.png";
 
 export const imgs = {
   logo,
@@ -54,6 +55,7 @@ export const imgs = {
   rightArrow,
   sendIcon,
   boldRightArrow,
+  mailIcon,
 };
 
 export const infoList = [
