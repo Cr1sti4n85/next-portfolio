@@ -2,9 +2,12 @@
 import Image from "next/image";
 import { imgs } from "@/assets/assets";
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
+import ThemeToggler from "./ThemeToggler";
 
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
+  const { theme } = useTheme();
   const sideMenuRef = useRef<HTMLUListElement>({} as HTMLUListElement);
   const openMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
@@ -26,13 +29,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+      {/* <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image
           src={imgs.headerBgColor}
           alt="header background color"
           className="w-full"
         />
-      </div>
+      </div> */}
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
           isScroll ? "shadow-sm backdrop-blur-lg" : ""
@@ -47,7 +50,9 @@ const Navbar = () => {
           />
         </a>
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full  font-family-ovo px-12 py-3 bg-white shadow-sm opacity-75`}
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full  font-family-ovo px-12 py-3 shadow-sm ${
+            theme === "light" && "opacity-75 bg-white"
+          }`}
         >
           <li>
             <a href="#top">Inicio</a>
@@ -66,9 +71,10 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="flex items-center gap-4">
-          <button>
+          {/* <button>
             <Image src={imgs.moonIcon} alt="moon icon" className="w-6" />
-          </button>
+          </button> */}
+          <ThemeToggler />
           <a
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-family-ovo"

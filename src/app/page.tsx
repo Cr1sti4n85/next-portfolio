@@ -8,7 +8,7 @@ import Work from "./components/Work";
 
 export default function Home() {
   return (
-    <>
+    <div className="dark:bg-darkTheme transition-all duration-300">
       <Navbar />
       <Header />
       <About />
@@ -16,6 +16,6 @@ export default function Home() {
       <Work />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -23,11 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden`}
       >
-        {children}
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          {children}
+        </ThemeProvider>
+        {/* {children} */}
       </body>
     </html>
   );

@@ -11,6 +11,8 @@
   --shadow-white: 4px 4px 0 #fff;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer utilities {
   .grid-auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

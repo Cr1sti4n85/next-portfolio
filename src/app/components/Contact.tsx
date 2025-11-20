@@ -61,7 +61,7 @@ const Contact = () => {
           type="submit"
           className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 cursor-pointer"
         >
-          Enviar{" "}
+          Enviar
           <Image src={imgs.rightArrowWhite} alt="right arrow" className="w-4" />
         </button>
         <p className="mt-4">{result}</p>
