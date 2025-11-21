@@ -2,10 +2,21 @@
 import { imgs } from "@/assets/assets";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
   const { theme } = useTheme();
   const currentYear = new Date().getFullYear();
+  const [mounted, setMounted] = useState(false);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   return (
     <div className="mt-20 font-family-outfit">
       <div className="text-center">

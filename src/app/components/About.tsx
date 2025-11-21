@@ -2,9 +2,20 @@
 import { imgs, infoList, toolsData } from "@/assets/assets";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const About = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
       <h2 className="text-center text-5xl font-family-ovo">Acerca de mi</h2>

@@ -7,6 +7,7 @@ import ThemeToggler from "./ThemeToggler";
 
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
 
   const { theme } = useTheme();
   const sideMenuRef = useRef<HTMLUListElement>(null);
@@ -29,15 +30,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
-      {/* <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
-        <Image
-          src={imgs.headerBgColor}
-          alt="header background color"
-          className="w-full"
-        />
-      </div> */}
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
           isScroll ? "shadow-sm backdrop-blur-lg" : ""
