@@ -1,9 +1,13 @@
 import logo from "./logo.png";
+import darkLogo from "./logo-dark.png";
 import arrowIcon from "./arrow-icon.png";
+import arrowIconDark from "./arrow-icon-dark.png";
 import headerBgColor from "./header-bg-color.png";
 import moonIcon from "./moon_icon.png";
 import blackMenu from "./menu-black.png";
+import whiteMenu from "./menu-white.png";
 import blackX from "./close-black.png";
+import whiteX from "./close-white.png";
 import profileImg from "./profile_pic.jpg";
 import handIcon from "./hand-icon.png";
 import rightArrowWhite from "./right-arrow-white.png";
@@ -26,6 +30,7 @@ import rightArrow from "./right-arrow.png";
 import sendIcon from "./send-icon.png";
 import boldRightArrow from "./right-arrow-bold.png";
 import mailIcon from "./mail_icon.png";
+import mailIconDark from "./mail_icon_dark.png";
 
 export const imgs = {
   logo,
@@ -56,6 +61,11 @@ export const imgs = {
   sendIcon,
   boldRightArrow,
   mailIcon,
+  darkLogo,
+  arrowIconDark,
+  whiteMenu,
+  whiteX,
+  mailIconDark,
 };
 
 export const infoList = [

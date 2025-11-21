@@ -1,7 +1,10 @@
+"use client";
 import { imgs, infoList, toolsData } from "@/assets/assets";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 const About = () => {
+  const { theme } = useTheme();
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
       <h2 className="text-center text-5xl font-family-ovo">Acerca de mi</h2>
@@ -22,15 +25,23 @@ const About = () => {
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <li
                 key={index}
-                className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-300 hover:shadow-black"
+                className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-300 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
               >
-                <Image src={icon} alt={title} className="w-7 mt-3" />
-                <h3 className="my-4 font-semibold text-gray-700">{title}</h3>
-                <p className="text-gray-600 text-sm">{description}</p>
+                <Image
+                  src={theme === "light" ? icon : iconDark}
+                  alt={title}
+                  className="w-7 mt-3"
+                />
+                <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
+                  {title}
+                </h3>
+                <p className="text-gray-600 text-sm dark:text-white/80">
+                  {description}
+                </p>
               </li>
             ))}
           </ul>
-          <h4 className="my-6 text-gray-700 font-family-ovo">
+          <h4 className="my-6 text-gray-700 font-family-ovo dark:text-white/80">
             Herramientas que uso
           </h4>
           <ul className="flex items-center gap-3 sm:gap-5">

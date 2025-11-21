@@ -1,14 +1,25 @@
+"use client";
 import { imgs } from "@/assets/assets";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 const Footer = () => {
+  const { theme } = useTheme();
   const currentYear = new Date().getFullYear();
   return (
     <div className="mt-20 font-family-outfit">
       <div className="text-center">
-        <Image src={imgs.logo} alt="logo" className="w-36 mx-auto mb-2" />
+        <Image
+          src={theme === "light" ? imgs.logo : imgs.darkLogo}
+          alt="logo"
+          className="w-36 mx-auto mb-2"
+        />
         <div className="w-max flex items-center gap-2 mx-auto">
-          <Image src={imgs.mailIcon} alt="mail icon" className="w-6" />
+          <Image
+            src={theme === "light" ? imgs.mailIcon : imgs.mailIconDark}
+            alt="mail icon"
+            className="w-6"
+          />
           cp.lecaros@gmail.com
         </div>
       </div>

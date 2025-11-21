@@ -14,7 +14,7 @@ const Work = () => {
         Bienvenido a mi portafolio. Explora la siguiente colección de proyectos
         que muestran en lo que he estado trabajando durante el último tiempo.
       </p>
-      <div className="grid grid-auto-fit my-10 gap-5">
+      <div className="grid grid-auto-fit my-10 gap-5 dark:text-black">
         {workData.map((project, idx) => (
           <div
             key={idx}
@@ -35,7 +35,7 @@ const Work = () => {
       </div>
       <a
         href=""
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-300"
+        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-300 dark:text-white dark:border-white dark:hover:bg-darkHover"
       >
         Mostrar más{" "}
         <Image src={imgs.boldRightArrow} alt="right arrow" className="w-4" />
